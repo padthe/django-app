@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.venv
+/.venv
+.env
+
+# Django
+*.log
+db.sqlite3
+
+# Migrations ()
+# api/migrations/
+# */migrations/*.pyc
+# !*/migrations/__init__.py
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+*.env
+.env.*
+
+# Docker
+*.pid
+*.seed
+*.pid.lock
