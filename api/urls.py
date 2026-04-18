@@ -1,7 +1,9 @@
 from django.urls import path
-from .views import hello, get_messages
+from .views import hello, get_messages, create_message, get_message_by_id, delete_message, message_detail
 
 urlpatterns = [
     path('hello/', hello),
-    path('messages/', get_messages)
+    path('messages/', get_messages),
+    path('create/', create_message),
+    path('messages/<int:id>/', message_detail),
 ]
