@@ -64,20 +64,21 @@ def delete_message(request,id):
 
 
 @csrf_exempt
-def message_detail(request, id):
+def message_detail(request,id):
     try:
         message = Message.objects.get(id=id)
     except Message.DoesNotExist:
-        return JsonResponse({"error": "Message not found"}, status=404)
+        return JsonResponse({"error" : "No message was found"}, status = 404)
 
     if request.method == "GET":
         return JsonResponse({
-            "id": message.id,
-            "text": message.text
+            "id" : message.id,
+            "message" : message.text
         })
-
+    
     elif request.method == "DELETE":
         message.delete()
-        return JsonResponse({"message": "Deleted successfully"})
+        return JsonResponse({"message" :"deleted"})
+    
+    return JsonResponse({"error" : "Invalid method"}, status = 405)
 
-    return JsonResponse({"error": "Invalid method"}, status=405)
