@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import hello, get_messages, create_message, get_message_by_id, delete_message, message_detail
+from .views import hello, get_messages, create_message, message_detail
 
 urlpatterns = [
     path('hello/', hello),
